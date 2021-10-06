@@ -92,10 +92,15 @@ NtQueryPerformanceCounter_t *NtQueryPerformanceCounter = NULL;
 NtQuerySystemTime_t *NtQuerySystemTime = NULL;
 
 /**
+ * \defgroup bgroup Group B
+ *
+
+/**
  * Create a new thread, starting with execution of lf_thread
  * getting passed arguments. The new handle is stored in thread.
  * 
  * @return 0 on success, 1 otherwise.
+ * \ingroup bgroup
  */
 int lf_thread_create(_lf_thread_t* thread, void *(*lf_thread) (void *), void* arguments) {
     uintptr_t handle = _beginthread((windows_thread)lf_thread,0,arg);
